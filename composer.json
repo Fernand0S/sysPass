@@ -6,15 +6,15 @@
   "license": "GPL-3.0",
   "authors": [
     {
-      "name": "Rubén Domínguez",
-      "email": "nuxsmin@syspass.org",
+      "name": "Fernando Santana",
+      "email": "a.fernando@hotmail.com.br",
       "role": "Author/Developer",
       "homepage": "https://syspass.org/"
     }
   ],
   "support": {
-    "issues": "https://github.com/nuxsmin/sysPass/issues",
-    "source": "https://github.com/nuxsmin/sysPass",
+    "issues": "https://github.com/Fernand0S/sysPass/issues",
+    "source": "https://github.com/Fernand0S/sysPass",
     "docs": "https://doc.syspass.org"
   },
   "require": {
