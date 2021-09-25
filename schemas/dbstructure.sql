@@ -492,29 +492,33 @@ CREATE TABLE `Tag`
   DEFAULT CHARSET = utf8
   COLLATE utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
 DROP TABLE IF EXISTS `Track`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Track`
-(
-  `id`         int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `userId`     smallint(5) unsigned DEFAULT NULL,
-  `source`     varchar(100)     NOT NULL,
-  `time`       int(10) unsigned NOT NULL,
-  `timeUnlock` int(10) unsigned,
-  `ipv4`       binary(4)            DEFAULT NULL,
-  `ipv6`       binary(16)           DEFAULT NULL,
+CREATE TABLE `Track` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `userId` smallint(5) unsigned DEFAULT NULL,
+  `source` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `time` int(10) unsigned NOT NULL,
+  `timeUnlock` int(10) unsigned DEFAULT NULL,
+  `ipv4` binary(4) DEFAULT NULL,
+  `ipv6` binary(16) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_Track_01` (`userId`),
-  KEY `idx_Track_02` (`time`, `ipv4`, `ipv6`, `source`)
-)
-  ENGINE = InnoDB
-  DEFAULT CHARSET = utf8
-  COLLATE utf8_unicode_ci;
+  KEY `idx_Track_02` (`time`,`ipv4`,`ipv6`,`source`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-DROP TABLE IF EXISTS `User`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
+--
+-- Dumping data for table `Track`
+--
+
+LOCK TABLES `Track` WRITE;
+/*!40000 ALTER TABLE `Track` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Track` ENABLE KEYS */;
+UNLOCK TABLES;
+
 CREATE TABLE `User`
 (
   `id`              smallint(5) unsigned NOT NULL AUTO_INCREMENT,
